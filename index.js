@@ -5,6 +5,12 @@ dotenv.config();
 
 const app = express();
 
+const data = {
+    name: "saksham",
+    age: 20,
+    city: "delhi"
+}
+
 app.get ("/", (req, res) => {
     res.send("hello world");
 });
@@ -19,6 +25,10 @@ app.get ("/login", (req, res) => {
 
 app.get ("/youtube", (req, res) => {
     res.send("<h2>sakshamyoutube.com</h2>");
+});
+
+app.get ("/data", (req, res) => {
+    res.json(data);
 });
 
 app.listen(process.env.PORT || 4000, () => {
